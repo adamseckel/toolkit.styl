@@ -1,14 +1,32 @@
 @import './variables'
 @import './functions'
 
-// $border-styles none hidden dotted dashed solid double groove ridge inset outset
-
+$border-radius-directions = 'top-left' 'top-right' 'bottom-left' 'bottom-right'
 
 for $direction in $directions
   .b{initial($direction)}
-    directions(border, $direction, $border-width)
+    direction('border', $direction, unit($border-width, $unit))
 
   for $size, $breakpoint in $breakpoints
     .b{initial($direction)}-{$size}
       @media screen and (min-width: unit($breakpoint, $unit))
-        directions(border, $direction, $border-width)
+        direction('border', $direction, unit($border-width, $unit))
+        direction('border-style', $direction, solid)
+
+for $color-name, $color-code in $colors
+  .ba-{$color-name}
+    border-color $color-code
+
+.ba-rounded
+  border-radius $border-radius
+
+.ba-circle
+  border-radius 100%
+
+.ba-pill
+  border-radius 99999px
+
+for $border-radius-direction in $border-radius-directions
+  $initials = split('-', $border-radius-direction)
+  .br{$initials[0]}{$initials[1]}-0
+    direction('border-radius', $border-radius-direction, unit(0, $unit))

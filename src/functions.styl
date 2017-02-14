@@ -1,14 +1,23 @@
+$directional-properties = border-style border-radius
+
 initial(direction)
   slice(direction, 0, 1)
 
-directions(property, direction, offset)
-  if direction is 'vertical'
-    {property}-top unit(offset, $unit)
-    {property}-bottom unit(offset, $unit)
-  else if direction is 'horizontal'
-    {property}-left unit(offset, $unit)
-    {property}-right unit(offset, $unit)
-  else if direction is 'all'
-    {property} unit(offset, $unit)
+directionKeyVal(key, direction, val)
+  $props = split('-', property)
+  if property in $directional-properties
+    {$props[0]}-{$direction}-{$props[1]} val
   else
-    {property}-{direction} unit(offset, $unit)
+    {property}-{direction} val
+
+direction(property, direction, value)
+  if direction is 'vertical'
+    directionKeyVal(property, top, value)
+    directionKeyVal(property, bottom, value)
+  else if direction is 'horizontal'
+    directionKeyVal(property, left, value)
+    directionKeyVal(property, right, value)
+  else if direction is 'all'
+    {property} value
+  else
+    directionKeyVal(property, direction, value)
