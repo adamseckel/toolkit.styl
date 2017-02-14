@@ -1,0 +1,33 @@
+{
+  "name": "tools.css",
+  "version": "1.0.0",
+  "description": "Atomic css classes in Stylus for fast, mobile-first prototyping and web design.",
+  "main": "tools.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hemlok/tools.styl.git"
+  },
+  "keywords": [
+    "stylus",
+    "css",
+    "atomic",
+    "prototyping"
+  ],
+  "author": "hemlok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hemlok/tools.styl/issues"
+  },
+  "homepage": "https://github.com/hemlok/tools.styl#readme",
+  "devDependencies": {
+    "autoprefixer": "6.5.3",
+    "cssnano": "3.8.0",
+    "gulp": "3.9.1",
+    "gulp-postcss": "6.2.0",
+    "gulp-stylus": "2.5.0",
+    "stylint": "1.5.9"
+  }
+}

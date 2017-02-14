@@ -1,0 +1,14 @@
+initial(direction)
+  slice(direction, 0, 1)
+
+directions(property, direction, offset)
+  if direction is 'vertical'
+    {property}-top unit(offset, $unit)
+    {property}-bottom unit(offset, $unit)
+  else if direction is 'horizontal'
+    {property}-left unit(offset, $unit)
+    {property}-right unit(offset, $unit)
+  else if direction is 'all'
+    {property} unit(offset, $unit)
+  else
+    {property}-{direction} unit(offset, $unit)

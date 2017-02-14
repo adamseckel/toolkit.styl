@@ -1,0 +1,9 @@
+for $offset in $offsets
+  for $direction in $directions
+    .m{initial($direction)}-{$offset}
+      directions(margin, $direction, $offset)
+
+    for $size, $breakpoint in $breakpoints
+      .m{initial($direction)}-{$offset}-{$size}
+        @media screen and (min-width: unit($breakpoint, $unit))
+          directions(margin, $direction, $offset)

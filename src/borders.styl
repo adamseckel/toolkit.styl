@@ -1,0 +1,14 @@
+@import './variables'
+@import './functions'
+
+// $border-styles none hidden dotted dashed solid double groove ridge inset outset
+
+
+for $direction in $directions
+  .b{initial($direction)}
+    directions(border, $direction, $border-width)
+
+  for $size, $breakpoint in $breakpoints
+    .b{initial($direction)}-{$size}
+      @media screen and (min-width: unit($breakpoint, $unit))
+        directions(border, $direction, $border-width)
