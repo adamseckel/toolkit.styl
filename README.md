@@ -8,6 +8,9 @@ This is an tiny (1kb gzipped) unopinionated, atomic css library builder.
 
 Enter your own values in src/variables.styl, and compile the library with your projects colors, font-scale, and breakpoints, or use the default.
 
+# To Do
+This is a work in progress library. API is subject to change whenever I feel like it. I might even make this javascript with a constructor function to pass in your defaults...
+
 # The Framework:
 `.mv-10` applies `margin-top: 10; margin-bottom: 10`
 
