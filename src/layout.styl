@@ -1,0 +1,11 @@
+layouts(size)
+
+  // Margins
+  for $offset in $offsets
+    for $direction in $directions
+      if size is $base
+        .m{initial($direction)}-{$offset}
+          direction('margin', $direction, unit($offset, $unit))
+      else
+        .m{initial($direction)}-{$offset}-{size}
+          direction('margin', $direction, unit($offset, $unit))

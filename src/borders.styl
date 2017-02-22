@@ -1,32 +1,43 @@
-@import './variables'
-@import './functions'
+borders(size)
 
-$border-radius-directions = 'top-left' 'top-right' 'bottom-left' 'bottom-right'
-
-for $direction in $directions
-  .b{initial($direction)}
-    direction('border', $direction, unit($border-width, $unit))
-
-  for $size, $breakpoint in $breakpoints
-    .b{initial($direction)}-{$size}
-      @media screen and (min-width: unit($breakpoint, $unit))
+  // Border
+  for $direction in $directions
+    if size is $base
+      .b{initial($direction)}
         direction('border', $direction, unit($border-width, $unit))
         direction('border-style', $direction, solid)
 
-for $color-name, $color-code in $colors
-  .ba-{$color-name}
-    border-color $color-code
+    else
+      .b{initial($direction)}-{$size}
+        direction('border', $direction, unit($border-width, $unit))
+        direction('border-style', $direction, solid)
 
-.ba-rounded
-  border-radius $border-radius
 
-.ba-circle
-  border-radius 100%
+  // Border Color
+  for $color-name, $color-code in $colors
+    if size is $base
+      .ba-{$color-name}
+        border-color $color-code
 
-.ba-pill
-  border-radius 99999px
 
-for $border-radius-direction in $border-radius-directions
-  $initials = split('-', $border-radius-direction)
-  .br{$initials[0]}{$initials[1]}-0
-    direction('border-radius', $border-radius-direction, unit(0, $unit))
+  // Border Radius
+  $border-radius-directions = 'top-left' 'top-right' 'bottom-left' 'bottom-right'
+
+  if size is $base
+    .ba-rounded
+      border-radius $border-radius
+
+    .ba-circle
+      border-radius 100%
+
+    .ba-pill
+      border-radius 99999px
+
+  for $border-radius-direction in $border-radius-directions
+    $initials = split('-', $border-radius-direction)
+    if size is $base
+      .br-{initial($initials[0])}{initial($initials[1])}-0
+        direction('border-radius', $border-radius-direction, unit(0, $unit))
+    else
+      .br-{initial($initials[0])}{initial($initials[1])}-0-{$size}
+        direction('border-radius', $border-radius-direction, unit(0, $unit))

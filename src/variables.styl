@@ -1,14 +1,34 @@
+// Offsts to use for margins, paddings, gutters
 $offsets = 5 10 20 40 60
+// Directions to apply offests
 $directions = top bottom left right vertical horizontal all
+
+// Default Border Properties
 $border-width = 1
+$border-radius = 2px
+
+// Default Unit
 $unit = 'px'
 
+// Breakpoints
 $breakpoints = {
-  desktop: 1024
+  sm: 0,
+  lg: 1024
 }
+// Indicate the breakpoint that is 0, your base.
+$base = 'sm'
 
+// Your projects Colors as a `name: hex`, object.
 $colors = {
   black: #000000
 }
 
-$text-scale =  60 24 18 12 10
+// Your Pprojects font-sizes as a `name: font-size`, object.
+$font-scale = {
+  '1': 60,
+  '2': 30,
+  '3': 20,
+  '4': 18,
+  '5': 12,
+  '6': 10
+}

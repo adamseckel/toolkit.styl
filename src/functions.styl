@@ -1,14 +1,14 @@
-$directional-properties = border-style border-radius
+$directional-properties = 'border-style' 'border-radius'
 
 initial(direction)
   slice(direction, 0, 1)
 
 directionKeyVal(key, direction, val)
-  $props = split('-', property)
-  if property in $directional-properties
-    {$props[0]}-{$direction}-{$props[1]} val
+  $props = split('-', key)
+  if key in $directional-properties
+    {$props[0]}-{direction}-{$props[1]} val
   else
-    {property}-{direction} val
+    {key}-{direction} val
 
 direction(property, direction, value)
   if direction is 'vertical'

@@ -1,0 +1,53 @@
+containers(size)
+
+  // Background Color
+  for $color-name, $color-code in $colors
+    if size is $base
+      .bg-{$color-name}
+        background-color $color-code
+    else
+      .bg-{$color-name}-{size}
+        background-color $color-code
+
+
+  // Padding
+  for $offset in $offsets
+    for $direction in $directions
+      if size is $base
+        .p{initial($direction)}-{$offset}
+          direction('padding', $direction, unit($offset, $unit))
+      else
+        .p{initial($direction)}-{$offset}-{size}
+          direction('padding', $direction, unit($offset, $unit))
+
+
+  // Overflows
+  $overflows = visible hidden scroll auto
+  $overflow-directions = x y all
+
+  for $overflow in $overflows
+    for $direction in $overflow-directions
+      if size is $base
+        .o{initial($direction)}-{$overflow}
+          direction('overflow', $direction, $overflow)
+      else
+        .o{initial($direction)}-{$overflow}-{size}
+          direction('overflow', $direction, $overflow)
+
+
+  // Container Widths
+  for $label, $width in $container-widths
+    if size is $base
+      .w-{$label}
+        width $width
+    else
+      .w-{$label}-{size}
+        width $width
+
+  for $label, $width in $container-widths
+    if size is $base
+      .mw-{$label}
+        max-width $width
+    else
+      .mw-{$label}-{size}
+        max-width $width

@@ -1,9 +1,0 @@
-for $offset in $offsets
-  for $direction in $directions
-    .p{initial($direction)}-{$offset}
-      direction('padding', $direction, unit($offset, $unit))
-
-    for $size, $breakpoint in $breakpoints
-      .p{initial($direction)}-{$offset}-{$size}
-        @media screen and (min-width: unit($breakpoint, $unit))
-          direction('padding', $direction, unit($offset, $unit))
