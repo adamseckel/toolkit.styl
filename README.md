@@ -4,7 +4,7 @@ tachyons.io inspired Atomic css classes in Stylus and CSS3 for fast, mobile-firs
 
 Why did I write this in stylus? Also, why didn't I fork tachyons.io?
 
-This is an unopinionated, atomic css library builder. 
+This is an tiny (1kb gzipped) unopinionated, atomic css library builder. 
 
 Enter your own values in src/variables.styl, and compile the library with your projects colors, font-scale, and breakpoints, or use the default.
 
