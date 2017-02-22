@@ -8,6 +8,11 @@ This is an tiny (1kb gzipped) unopinionated, atomic css library builder.
 
 Enter your own values in src/variables.styl, and compile the library with your projects colors, font-scale, and breakpoints, or use the default.
 
+# The Framework:
+`.mv-10` applies `margin-top: 10; margin-bottom: 10`
+`.mv-10-lg` applies `margin-top: 10; margin-bottom: 10;` to devices with screen size larger than your `lg` breakpoint
+`10` is a number in the unit of your specification, `px`, `em`, `rem` etc.
+
 # Customize:
 
 Your projects offsts to use for margins, paddings, gutters
