@@ -10,23 +10,23 @@ Enter your own values in src/variables.styl, and compile the library with your p
 
 # Customize:
 
-Offsts to use for margins, paddings, gutters
+Your projects offsts to use for margins, paddings, gutters
 ```
 $offsets = 0 5 10 20 40 60
 ```
 
-Default Border Properties
+Your projects default Border Properties
 ```
 $border-width = 1
 $border-radius = 2px
 ```
 
-Default Unit
+Your projects default Unit
 ```
 $unit = 'px'
 ```
 
-Breakpoints
+Your projects breakpoints
 ```
 $breakpoints = {
   sm: 0,
@@ -41,7 +41,7 @@ $colors = {
 }
 ```
 
-Your Pprojects font-sizes as a `name: font-size`, object.
+Your projects font-sizes as a `name: font-size`, object.
 ```
 $font-scale = {
   '1': 60,
